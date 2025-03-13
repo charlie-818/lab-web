@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .terminal-box {
+            width: 70px;
+            height: 70px;
+            border: 2px solid #00FF00;
+            position: relative;
+        }
+        .terminal-prompt {
+            position: absolute;
+            top: 50%;
+            left: 35%;
+            transform: translateY(-50%);
+            color: #00FF00;
+            font-family: monospace;
+            font-size: 24px;
+        }
+        .terminal-underscore {
+            position: absolute;
+            bottom: 25%;
+            right: 30%;
+            width: 30px;
+            height: 2px;
+            background-color: #00FF00;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal-box">
+        <div class="terminal-prompt">></div>
+        <div class="terminal-underscore"></div>
+    </div>
+</body>
+</html> 

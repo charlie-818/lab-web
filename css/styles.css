@@ -1,0 +1,549 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --black: #000000;
+    --off-black: #0A0A0A;
+    --white: #FFFFFF;
+    --off-white: #F0F0F0;
+    --accent: #00FFD1; /* Bright cyan for contrast against black */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 2rem;
+    --spacing-lg: 3rem;
+    --font-size-sm: 0.875rem;
+    --font-size-md: 1rem;
+    --font-size-lg: 1.5rem;
+    --font-size-xl: 2.5rem;
+    --font-size-xxl: 4rem; /* For the featured quote */
+    --border-width: 1px;
+    
+    /* Language colors */
+    --lang-html: #e34c26;
+    --lang-css: #563d7c;
+    --lang-javascript: #f1e05a;
+    --lang-typescript: #3178c6;
+    --lang-python: #3572A5;
+    --lang-swift: #ffac45;
+    --lang-solidity: #AA6746;
+}
+
+body {
+    background-color: var(--black);
+    color: var(--white);
+    font-family: 'Inter', sans-serif;
+    font-size: var(--font-size-md);
+    line-height: 1.5;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: var(--spacing-md);
+    font-weight: 300;
+}
+
+/* Minimalist Typography */
+h2 {
+    font-size: var(--font-size-lg);
+    font-weight: 400;
+    margin-bottom: var(--spacing-md);
+    color: var(--white);
+    position: relative;
+    padding-bottom: var(--spacing-xs);
+}
+
+h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--accent);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+    color: var(--off-white);
+}
+
+a {
+    color: var(--accent);
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+ul {
+    list-style: none;
+    margin-bottom: var(--spacing-md);
+}
+
+/* Minimal Header */
+header {
+    padding: var(--spacing-md) 0;
+    margin-bottom: var(--spacing-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+
+.logo-image {
+    height: 50px;
+    width: 50px;
+    margin-right: var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.05); /* Subtle background to help with contrast */
+    padding: 4px;
+    border-radius: 2px;
+}
+
+.logo-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* Removed the filter that was making the white logo invisible */
+}
+
+.logo-text {
+    font-size: var(--font-size-xl);
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+}
+
+/* Ultra-minimal Navigation */
+nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+    margin-bottom: 0;
+}
+
+nav li {
+    margin: 0;
+}
+
+nav a {
+    color: var(--white);
+    position: relative;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: var(--font-size-sm);
+}
+
+nav a.external-link {
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+}
+
+nav a.external-link::after {
+    content: "↗";
+    font-size: 0.75rem;
+    margin-left: 4px;
+    position: relative;
+    top: -2px;
+}
+
+nav a:hover {
+    color: var(--accent);
+    opacity: 0.9;
+}
+
+nav a.external-link:hover {
+    opacity: 0.7;
+}
+
+/* Featured Quote Styling */
+.quote-container {
+    padding: var(--spacing-lg) 0;
+    margin-bottom: var(--spacing-lg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.featured-quote {
+    font-size: var(--font-size-xxl);
+    font-weight: 700;
+    line-height: 1.2;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.quote-text {
+    display: block;
+    letter-spacing: -0.03em;
+}
+
+.quote-text.accent {
+    color: var(--accent);
+}
+
+.cursor {
+    display: inline-block;
+    width: 12px;
+    height: 50px;
+    background-color: var(--accent);
+    animation: blink 1s step-end infinite;
+    margin-left: 10px;
+    position: absolute;
+    right: -20px;
+    bottom: 0;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+/* Clean Content Layout */
+main {
+    padding: 0;
+}
+
+/* Sections with Minimal Styling */
+section {
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+section ul li {
+    position: relative;
+    padding-left: var(--spacing-md);
+    margin-bottom: var(--spacing-xs);
+    color: var(--off-white);
+}
+
+section ul li::before {
+    content: "→";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+}
+
+/* Minimalist Project Cards */
+.project-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+.project-list li {
+    padding: 0;
+    margin-bottom: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    border-left: var(--border-width) solid var(--accent);
+    padding-left: var(--spacing-sm);
+    background: transparent;
+}
+
+.project-list li::before {
+    display: none; /* Override the arrow for project list items */
+}
+
+.project-name {
+    font-weight: 600;
+    color: var(--white);
+    margin-bottom: var(--spacing-xs);
+}
+
+.project-desc {
+    color: var(--off-white);
+    font-size: var(--font-size-sm);
+    margin-bottom: var(--spacing-xs);
+    flex-grow: 1;
+    opacity: 0.8;
+}
+
+.project-meta {
+    font-size: var(--font-size-sm);
+    color: var(--accent);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    margin-top: auto;
+    opacity: 0.9;
+}
+
+.project-link {
+    font-size: var(--font-size-sm);
+    align-self: flex-start;
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-link::after {
+    content: " →";
+    margin-left: 0.25rem;
+}
+
+/* Token Flow with Dark Theme */
+.token-flow {
+    font-family: 'JetBrains Mono', monospace;
+    background: rgba(255, 255, 255, 0.03);
+    padding: var(--spacing-sm);
+    margin: var(--spacing-sm) 0;
+    white-space: pre;
+    overflow-x: auto;
+    border-left: 2px solid var(--accent);
+    font-size: var(--font-size-sm);
+    color: var(--off-white);
+}
+
+/* Minimal Footer */
+footer {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-sm);
+    font-size: var(--font-size-sm);
+    color: var(--off-white);
+    opacity: 0.7;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer p {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+    margin-bottom: 0;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        padding: var(--spacing-sm);
+    }
+    
+    nav ul {
+        gap: var(--spacing-sm);
+    }
+    
+    .project-list {
+        grid-template-columns: 1fr;
+    }
+    
+    .featured-quote {
+        font-size: 2.5rem;
+    }
+    
+    .cursor {
+        height: 30px;
+    }
+}
+
+/* Two-column layout for larger screens */
+@media (min-width: 900px) {
+    main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: var(--spacing-lg);
+    }
+    
+    section {
+        margin-bottom: var(--spacing-md);
+    }
+    
+    section#about, 
+    section#projects {
+        grid-column: 1;
+    }
+    
+    section#token, 
+    section#tools {
+        grid-column: 2;
+        margin-top: 0;
+    }
+    
+    /* GitHub repos section spans full width */
+    section#github-repos {
+        grid-column: 1 / -1;
+        margin-top: var(--spacing-lg);
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: white;
+        color: black;
+    }
+    
+    a {
+        color: #008070;
+        text-decoration: underline;
+    }
+    
+    .token-flow {
+        border: 1px solid #ccc;
+    }
+}
+
+/* GitHub Repositories Section */
+.repo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+}
+
+.repo-card {
+    background-color: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: var(--spacing-sm);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+    height: 100%;
+}
+
+.repo-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent);
+}
+
+.repo-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: var(--spacing-xs);
+    gap: var(--spacing-xs);
+}
+
+.repo-name {
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.2;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.repo-name a {
+    color: var(--white);
+    text-decoration: none;
+}
+
+.repo-name a:hover {
+    color: var(--accent);
+}
+
+.repo-visibility {
+    font-size: 0.7rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2px 6px;
+    border-radius: 10px;
+    color: var(--off-white);
+}
+
+.repo-fork {
+    font-size: 0.7rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 2px 6px;
+    border-radius: 10px;
+    color: var(--off-white);
+    opacity: 0.8;
+}
+
+.repo-desc {
+    font-size: var(--font-size-sm);
+    color: var(--off-white);
+    margin-bottom: var(--spacing-xs);
+    opacity: 0.8;
+    flex-grow: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4;
+}
+
+.repo-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    font-size: 0.75rem;
+    color: var(--off-white);
+    opacity: 0.7;
+    margin-top: auto;
+}
+
+.repo-lang {
+    display: flex;
+    align-items: center;
+}
+
+.lang-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    margin-right: 4px;
+    display: inline-block;
+}
+
+.lang-dot.html { background-color: var(--lang-html); }
+.lang-dot.css { background-color: var(--lang-css); }
+.lang-dot.javascript { background-color: var(--lang-javascript); }
+.lang-dot.typescript { background-color: var(--lang-typescript); }
+.lang-dot.python { background-color: var(--lang-python); }
+.lang-dot.swift { background-color: var(--lang-swift); }
+.lang-dot.solidity { background-color: var(--lang-solidity); }
+
+.view-more {
+    text-align: center;
+    margin-top: var(--spacing-sm);
+}
+
+.view-all-repos {
+    display: inline-block;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    color: var(--white);
+    font-size: var(--font-size-sm);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+}
+
+.view-all-repos:hover {
+    background-color: var(--accent);
+    color: var(--black);
+}
+
+/* Responsive adjustments for repo grid */
+@media (max-width: 768px) {
+    .repo-grid {
+        grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
+    }
+} 
