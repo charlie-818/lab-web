@@ -97,7 +97,7 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: var(--spacing-md);
+    margin-top: 0;
 }
 
 .logo {
