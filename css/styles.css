@@ -437,7 +437,7 @@ footer p {
     section#github-repos {
         grid-column: 1 / -1;
         grid-row: 4;
-        margin-top: var(--spacing-lg);
+        margin-top: 0;
     }
 }
 
