@@ -105,7 +105,7 @@ header {
     flex-direction: row;
     align-items: center;
     text-align: center;
-    gap: var(--spacing-sm);
+    gap: 0.25rem;
 }
 
 .logo-image {
@@ -132,7 +132,7 @@ header {
     font-weight: 700;
     color: var(--white);
     letter-spacing: -0.02em;
-    margin-left: var(--spacing-xs);
+    margin-left: 0;
 }
 
 /* Navigation positioning */
