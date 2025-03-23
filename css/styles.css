@@ -413,11 +413,13 @@ footer p {
     }
     
     /* Sharmo project section spans full width and appears after about/skills */
-    section#sharmo-project {
+    section#sharmo {
         grid-column: 1 / -1;
         grid-row: 2;
         margin-top: 0;
         margin-bottom: var(--spacing-md);
+        max-width: 100%;
+        width: 100%;
     }
     
     section#projects {
@@ -602,6 +604,7 @@ footer p {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-md);
+    width: 100%;
 }
 
 .sharmo-description {
@@ -621,6 +624,7 @@ footer p {
     display: grid;
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
+    width: 100%;
 }
 
 .sharmo-column h3 {
@@ -701,18 +705,29 @@ footer p {
     .sharmo-columns {
         grid-template-columns: 1fr 1fr;
         gap: var(--spacing-lg);
+        width: 100%;
     }
     
     .sharmo-content {
         flex-direction: column;
+        width: 100%;
     }
     
     .sharmo-description {
         flex: 1;
+        width: 100%;
     }
     
     .sharmo-cta {
         justify-content: flex-end;
+        width: 100%;
+    }
+}
+
+/* Increase column spacing for better readability on larger screens */
+@media (min-width: 1024px) {
+    .sharmo-columns {
+        gap: calc(var(--spacing-lg) * 1.5);
     }
 }
 
@@ -723,5 +738,42 @@ footer p {
     
     .sharmo-button {
         width: 100%;
+    }
+}
+
+/* Special full-width styles for Sharmo section */
+section#sharmo {
+    width: 100%;
+    max-width: 100%;
+    margin-left: calc(-1 * var(--spacing-md));
+    margin-right: calc(-1 * var(--spacing-md));
+    padding-left: var(--spacing-md);
+    padding-right: var(--spacing-md);
+    background-color: rgba(255, 255, 255, 0.02);
+    padding-top: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+}
+
+/* Adjust for responsive layout */
+@media (min-width: 900px) {
+    section#sharmo {
+        margin-left: calc(-1 * var(--spacing-md)); 
+        margin-right: calc(-1 * var(--spacing-md));
+        padding-left: var(--spacing-md);
+        padding-right: var(--spacing-md);
+        width: calc(100% + (var(--spacing-md) * 2));
+        max-width: calc(100% + (var(--spacing-md) * 2));
+    }
+}
+
+/* For extra-large screens */
+@media (min-width: 1400px) {
+    section#sharmo {
+        margin-left: calc(-1 * var(--spacing-lg));
+        margin-right: calc(-1 * var(--spacing-lg));
+        padding-left: var(--spacing-lg);
+        padding-right: var(--spacing-lg);
+        width: calc(100% + (var(--spacing-lg) * 2));
+        max-width: calc(100% + (var(--spacing-lg) * 2));
     }
 } 
