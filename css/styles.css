@@ -372,8 +372,11 @@ footer p {
         margin-bottom: var(--spacing-md);
     }
     
-    section#about, 
-    section#projects {
+    section#about {
+        grid-column: 1;
+    }
+    
+    section#sharmo-project {
         grid-column: 1;
     }
     
@@ -383,14 +386,12 @@ footer p {
         margin-top: 0;
     }
     
-    /* GitHub repos section spans full width */
-    section#github-repos {
-        grid-column: 1 / -1;
-        margin-top: var(--spacing-lg);
+    section#projects {
+        grid-column: 1;
     }
     
-    /* Sharmo project section spans full width */
-    section#sharmo-project {
+    /* GitHub repos section spans full width */
+    section#github-repos {
         grid-column: 1 / -1;
         margin-top: var(--spacing-lg);
     }
