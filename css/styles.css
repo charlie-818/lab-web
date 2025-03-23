@@ -198,6 +198,17 @@ nav a:hover {
     opacity: 0.9;
 }
 
+/* Active page indicator */
+nav a.active-page {
+    opacity: 1;
+    position: relative;
+}
+
+nav a.external-link.active-page {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(0, 255, 209, 0.3);
+}
+
 /* Featured Quote Styling */
 .quote-container {
     padding: 0 0 var(--spacing-lg) 0;

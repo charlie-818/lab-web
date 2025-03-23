@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A collection of reading materials and articles by Charlie Bicker-Caarten">
+    <title>Reading | LABS</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <style>
+        /* Reading page specific styles */
+        .reading-list {
+            margin-top: var(--spacing-md);
+        }
+        
+        .reading-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            padding: var(--spacing-md) 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: var(--spacing-xs);
+        }
+        
+        .reading-item:first-child {
+            padding-top: 0;
+        }
+        
+        .reading-item:last-child {
+            border-bottom: none;
+        }
+        
+        .reading-title {
+            font-size: var(--font-size-lg);
+            font-weight: 500;
+            color: var(--white);
+            margin-bottom: var(--spacing-xs);
+        }
+        
+        .reading-date {
+            font-size: var(--font-size-sm);
+            color: var(--accent);
+            margin-bottom: var(--spacing-sm);
+            font-weight: 400;
+        }
+        
+        .reading-excerpt {
+            font-size: var(--font-size-md);
+            line-height: 1.6;
+            margin-bottom: var(--spacing-sm);
+            color: var(--off-white);
+        }
+        
+        .reading-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-xs);
+            margin-bottom: var(--spacing-sm);
+        }
+        
+        .reading-tag {
+            background-color: rgba(255, 255, 255, 0.05);
+            color: var(--off-white);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: var(--font-size-sm);
+            font-weight: 400;
+        }
+        
+        .read-more {
+            font-size: var(--font-size-sm);
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            display: inline-flex;
+            align-items: center;
+            margin-top: var(--spacing-xs);
+        }
+        
+        .read-more::after {
+            content: "→";
+            margin-left: 0.5rem;
+        }
+        
+        @media (min-width: 768px) {
+            .reading-item {
+                grid-template-columns: 1fr 3fr;
+                gap: var(--spacing-md);
+            }
+            
+            .reading-meta {
+                padding-right: var(--spacing-md);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+      <div class="logo-container">
+        <div class="logo">
+            <div class="logo-image">
+                <img src="images/logo.png" alt="Labs Logo">
+            </div>
+            <span class="logo-text">LABS</span>
+        </div>
+      </div>
+      <nav>
+          <ul>
+              <li><a href="/" class="nav-link">Home</a></li>
+              <li><a href="https://github.com/charlie-818" target="_blank" class="external-link">GitHub</a></li>
+              <li><a href="/reading.html" class="external-link active-page">Reading</a></li>
+              <li><a href="https://www.linkedin.com/in/charlie-bicker-caarten" target="_blank" class="external-link">LinkedIn</a></li>
+          </ul>
+      </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Reading Materials</h2>
+            <p>A collection of articles, papers, and thoughts on blockchain, finance, and technology.</p>
+            
+            <div class="reading-list">
+                <article class="reading-item">
+                    <div class="reading-meta">
+                        <div class="reading-date">June 15, 2024</div>
+                        <div class="reading-tags">
+                            <span class="reading-tag">Blockchain</span>
+                            <span class="reading-tag">Finance</span>
+                        </div>
+                    </div>
+                    <div class="reading-content">
+                        <h3 class="reading-title">The Future of Tokenized Real Estate</h3>
+                        <p class="reading-excerpt">An exploration of how blockchain technology is revolutionizing property ownership and investment, creating new opportunities for fractional investment and liquidity in traditionally illiquid markets.</p>
+                        <a href="#" class="read-more">Read full article</a>
+                    </div>
+                </article>
+                
+                <article class="reading-item">
+                    <div class="reading-meta">
+                        <div class="reading-date">May 22, 2024</div>
+                        <div class="reading-tags">
+                            <span class="reading-tag">DeFi</span>
+                            <span class="reading-tag">Analytics</span>
+                        </div>
+                    </div>
+                    <div class="reading-content">
+                        <h3 class="reading-title">DeFi Liquidity Pool Mechanisms: A Technical Deep Dive</h3>
+                        <p class="reading-excerpt">A technical analysis of various liquidity pool designs in decentralized finance, examining efficiency metrics, impermanent loss calculations, and optimal strategies for liquidity providers.</p>
+                        <a href="#" class="read-more">Read full article</a>
+                    </div>
+                </article>
+                
+                <article class="reading-item">
+                    <div class="reading-meta">
+                        <div class="reading-date">April 10, 2024</div>
+                        <div class="reading-tags">
+                            <span class="reading-tag">Web3</span>
+                            <span class="reading-tag">Development</span>
+                        </div>
+                    </div>
+                    <div class="reading-content">
+                        <h3 class="reading-title">Building Efficient Smart Contracts for Real-World Applications</h3>
+                        <p class="reading-excerpt">A practical guide to optimizing Solidity smart contracts for gas efficiency, security, and scalability. Includes case studies from production deployments and lessons learned from security audits.</p>
+                        <a href="#" class="read-more">Read full article</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>
+            <span>© labs 2023</span>
+            <span>|</span>
+            <a href="https://github.com/charlie-818" target="_blank">github.com/charlie-818</a>
+            <span>|</span>
+            <span>All rights reserved</span>
+        </p>
+    </footer>
+</body>
+</html>
