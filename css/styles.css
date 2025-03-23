@@ -595,4 +595,133 @@ footer p {
     .repo-grid {
         grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
     }
+}
+
+/* Sharmo Featured Project Styling */
+.sharmo-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.sharmo-description {
+    max-width: 100%;
+}
+
+.sharmo-intro {
+    font-size: var(--font-size-lg);
+    color: var(--accent);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.4;
+    font-weight: 500;
+}
+
+/* Two-column layout for Sharmo details */
+.sharmo-columns {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}
+
+.sharmo-column h3 {
+    font-size: var(--font-size-md);
+    font-weight: 500;
+    margin-bottom: var(--spacing-sm);
+    padding-bottom: var(--spacing-xs);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--white);
+}
+
+.tech-list {
+    margin-bottom: 0;
+}
+
+.tech-list li {
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+    padding-left: var(--spacing-md);
+    font-size: var(--font-size-sm);
+    line-height: 1.5;
+}
+
+.tech-list li::before {
+    content: "→";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+}
+
+.tech-highlight {
+    color: var(--white);
+    font-weight: 500;
+}
+
+.sharmo-cta {
+    margin: var(--spacing-md) 0;
+    display: flex;
+    justify-content: center;
+}
+
+.sharmo-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-xs);
+    background-color: var(--accent);
+    color: var(--black);
+    font-weight: 500;
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 255, 209, 0.2);
+}
+
+.sharmo-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 255, 209, 0.3);
+}
+
+.button-text {
+    letter-spacing: 0.05em;
+}
+
+.button-arrow {
+    font-size: 18px;
+    transition: transform 0.2s ease;
+}
+
+.sharmo-button:hover .button-arrow {
+    transform: translateX(4px);
+}
+
+/* Media queries for responsive layout */
+@media (min-width: 768px) {
+    .sharmo-columns {
+        grid-template-columns: 1fr 1fr;
+        gap: var(--spacing-lg);
+    }
+    
+    .sharmo-content {
+        flex-direction: column;
+    }
+    
+    .sharmo-description {
+        flex: 1;
+    }
+    
+    .sharmo-cta {
+        justify-content: flex-end;
+    }
+}
+
+@media (max-width: 767px) {
+    .sharmo-cta {
+        margin-top: var(--spacing-md);
+    }
+    
+    .sharmo-button {
+        width: 100%;
+    }
 } 
