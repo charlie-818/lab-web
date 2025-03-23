@@ -376,23 +376,34 @@ footer p {
         grid-column: 1;
     }
     
-    section#sharmo-project {
-        grid-column: 1;
-    }
-    
-    section#token, 
-    section#tools {
+    section#token {
         grid-column: 2;
         margin-top: 0;
     }
     
+    /* Sharmo project section spans full width and appears after about/skills */
+    section#sharmo-project {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        margin-top: 0;
+        margin-bottom: var(--spacing-md);
+    }
+    
     section#projects {
         grid-column: 1;
+        grid-row: 3;
+    }
+    
+    section#tools {
+        grid-column: 2;
+        grid-row: 3;
+        margin-top: 0;
     }
     
     /* GitHub repos section spans full width */
     section#github-repos {
         grid-column: 1 / -1;
+        grid-row: 4;
         margin-top: var(--spacing-lg);
     }
 }
@@ -552,103 +563,5 @@ footer p {
 @media (max-width: 768px) {
     .repo-grid {
         grid-template-columns: repeat(auto-fill, minmax(100%, 1fr));
-    }
-}
-
-/* Featured Sharmo Project Section */
-#sharmo-project {
-    margin-top: var(--spacing-lg);
-    padding: var(--spacing-md) 0;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.sharmo-content {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-md);
-}
-
-.sharmo-description {
-    max-width: 800px;
-}
-
-.sharmo-intro {
-    font-size: var(--font-size-lg);
-    color: var(--accent);
-    margin-bottom: var(--spacing-md);
-    line-height: 1.4;
-    font-weight: 500;
-}
-
-.sharmo-features {
-    margin: var(--spacing-sm) 0 var(--spacing-md) var(--spacing-md);
-}
-
-.sharmo-features li {
-    margin-bottom: var(--spacing-xs);
-    position: relative;
-}
-
-.sharmo-features li::before {
-    content: "•";
-    color: var(--accent);
-    position: absolute;
-    left: -1rem;
-}
-
-.sharmo-cta {
-    margin: var(--spacing-md) 0;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.sharmo-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: var(--spacing-xs);
-    background-color: var(--accent);
-    color: var(--black);
-    font-weight: 500;
-    padding: 16px 32px;
-    border-radius: 4px;
-    font-size: 18px;
-    text-decoration: none;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 255, 209, 0.2);
-}
-
-.sharmo-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 255, 209, 0.3);
-}
-
-.button-text {
-    letter-spacing: 0.05em;
-}
-
-.button-arrow {
-    font-size: 20px;
-    transition: transform 0.2s ease;
-}
-
-.sharmo-button:hover .button-arrow {
-    transform: translateX(4px);
-}
-
-@media (min-width: 768px) {
-    .sharmo-content {
-        flex-direction: row;
-        align-items: center;
-    }
-    
-    .sharmo-description {
-        flex: 3;
-    }
-    
-    .sharmo-cta {
-        flex: 1;
-        justify-content: flex-end;
-        margin: 0;
     }
 } 
