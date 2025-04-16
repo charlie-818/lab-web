@@ -197,8 +197,6 @@ nav li {
     position: relative;
 }
 
-
-
 nav a.nav-link, nav a.external-link {
     padding: 8px 20px;
 }
@@ -269,12 +267,25 @@ nav a.external-link.active-page {
 
 /* Featured Quote Styling */
 .quote-container {
-    padding: 0 0 var(--spacing-lg) 0;
-    margin-bottom: var(--spacing-lg);
+    padding: var(--spacing-lg) 0;
+    margin: var(--spacing-lg) 0;
     display: flex;
     justify-content: center;
     align-items: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+}
+
+.quote-container::before {
+    content: "";
+    position: absolute;
+    top: calc(-1 * var(--spacing-sm));
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.3;
 }
 
 .featured-quote {
@@ -283,30 +294,33 @@ nav a.external-link.active-page {
     line-height: 1.2;
     text-align: center;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    gap: var(--spacing-xs);
     position: relative;
+    padding: var(--spacing-md) 0;
 }
 
 .quote-text {
-    display: block;
+    display: inline;
     letter-spacing: -0.03em;
+    text-shadow: 0 0 30px rgba(0, 255, 209, 0.1);
 }
 
 .quote-text.accent {
     color: var(--accent);
+    text-shadow: 0 0 30px rgba(0, 255, 209, 0.2);
 }
 
 .cursor {
     display: inline-block;
-    width: 12px;
+    width: 10px;
     height: 50px;
     background-color: var(--accent);
     animation: blink 1s step-end infinite;
-    margin-left: 10px;
-    position: absolute;
-    right: -20px;
-    bottom: 0;
+    position: relative;
+    top: 4px;
+    box-shadow: 0 0 20px rgba(0, 255, 209, 0.3);
 }
 
 @keyframes blink {
@@ -452,11 +466,17 @@ footer p {
     }
     
     .featured-quote {
-        font-size: 2.5rem;
+        font-size: calc(var(--font-size-xxl) * 0.6);
     }
     
     .cursor {
-        height: 30px;
+        height: 35px;
+        width: 8px;
+    }
+    
+    .quote-container {
+        padding: var(--spacing-md) 0;
+        margin: var(--spacing-md) 0;
     }
 }
 
