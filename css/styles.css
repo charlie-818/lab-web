@@ -913,4 +913,28 @@ section#sharmo h2::after {
         animation: none !important;
         opacity: 0.1;
     }
+}
+
+/* StateChain logo sliver styling */
+.statechain-logo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: var(--spacing-md);
+}
+.statechain-logo-sliver {
+    width: 320px;
+    max-width: 90vw;
+    height: 48px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 8px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    background: #fff;
+}
+@media (max-width: 600px) {
+    .statechain-logo-sliver {
+        width: 100%;
+        height: 32px;
+    }
 } 
